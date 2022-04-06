@@ -14,22 +14,22 @@ const images = [
 ];
 
 const $gallery = document.querySelector("ul");
-console.log($gallery);
 
 for (const image of images) {
   $gallery.insertAdjacentHTML(
     "beforeend",
-    `<li><img src=${image.url} alt="${image.alt}" width=700px /></li>`
+    `<li><img src=${image.url} alt="${image.alt}" /></li>`
   );
 }
 
-$gallery.style.listStyleType = "none";
-$gallery.style.display = "flex";
-$gallery.style.boxSizing = "border-box";
-$gallery.style.flexDirection = "column";
-$gallery.style.margin = "0";
-$gallery.style.padding = "0";
-$gallery.style.width = "100%";
-$gallery.style.height = "1600px";
-$gallery.style.justifyContent = "space-between";
-$gallery.style.alignItems = "center";
+const $galleryPhotos = document.querySelectorAll("img");
+const galleryPhotosArray = Array.from($galleryPhotos);
+
+for (const photo of galleryPhotosArray) {
+  photo.classList.add("photo");
+}
+
+//stworzylem klase .photo w pliku istniejacym juz pliku
+//common.css
+//wczesniej uzywalem $gallery.style, ale chyba nie o to chodzilo
+//teraz style sa zrobione za pomoca klas .gallery i .photo
