@@ -10,6 +10,6 @@ $colorChangingButton.addEventListener("click", changeBackgroundColor);
 
 function changeBackgroundColor() {
   let newColor = getRandomHexColor();
-  $body.style.backgroundColor = getRandomHexColor();
+  $body.style.backgroundColor = `${newColor}`;
   $colorName.textContent = newColor;
 }
